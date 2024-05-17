@@ -3,10 +3,10 @@
 function NavBar({ menuitems, minstock }) {
 
   const filteredList = menuItems.filter(item=>
-    item.instock >= minstock
+    item.instock < minstock
   )
   const updatedList = filteredList.map((item, index) => {
-    return <li key={index}>{item.name}</li>;
+    return <li key={index}>{item.name}:{item.inStock}</li>;
   });
   // note that React needs to have a single Parent
   return <ul style={{ listStyleType: "none" }}>{updatedList}</ul>;
